@@ -121,7 +121,7 @@ static struct tft_display st7796 = {
     .tftops = {
         .write_reg = tft_write_reg8,
         .init_display = tft_st7796_init_display,
-        .video_sync = tft_st7796_video_sync,
+        // .video_sync = tft_st7796_video_sync,
     },
 };
 

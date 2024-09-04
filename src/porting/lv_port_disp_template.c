@@ -124,6 +124,8 @@ void __time_critical_func(call_lv_disp_flush_ready)(void)
  *'lv_display_flush_ready()' has to be called when it's finished.*/
 static void disp_flush(lv_display_t * disp_drv, const lv_area_t * area, uint8_t * px_map)
 {
+    lv_draw_sw_rgb565_swap(px_map, lv_area_get_size(area));
+
     if(disp_flush_enabled) {
         struct video_frame vf = {
             .xs = area->x1,
