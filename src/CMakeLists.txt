@@ -94,6 +94,7 @@ elseif(LCD_DRV_USE_EINK_LUATOS)
 include(${CMAKE_CURRENT_LIST_DIR}/cmake/eink-luatos.cmake)
 endif()
 
+set(INDEV_DRV_USED        1)
 set(INDEV_DRV_USE_GT911   1)
 set(INDEV_DRV_USE_CST816D 0)
 
@@ -171,6 +172,7 @@ target_compile_definitions(${PROJECT_NAME} PUBLIC LCD_DRV_USE_SSD1681=${LCD_DRV_
 target_compile_definitions(${PROJECT_NAME} PUBLIC LCD_DRV_USE_EINK_LUATOS=${LCD_DRV_USE_EINK_LUATOS})
 
 # Indev drivers define
+target_compile_definitions(${PROJECT_NAME} PUBLIC INDEV_DRV_USED=${INDEV_DRV_USED})
 target_compile_definitions(${PROJECT_NAME} PUBLIC INDEV_DRV_USE_CST816D=${INDEV_DRV_USE_CST816D})
 target_compile_definitions(${PROJECT_NAME} PUBLIC INDEV_DRV_USE_GT911=${INDEV_DRV_USE_GT911})
 
